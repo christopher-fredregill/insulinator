@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'ingredient/index'
+
+  get 'ingredient/new'
+
+  get 'insulin/index'
+
+  get 'insulin/new'
+
+  get 'meal/index'
+
+  get 'meal/new'
+
+	get 'meal/:id' => 'meal#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

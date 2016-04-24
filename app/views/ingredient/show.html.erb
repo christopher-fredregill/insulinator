@@ -1,0 +1,3 @@
+<h1><%= "#{@ingredient.name}" %></h1>
+<p><%= "Amount used: #{@ingredient.amount}" %></p>
+<p><%= link_to @ingredient.meal.name, meal_url(id: @ingredient.meal.id) %></p>

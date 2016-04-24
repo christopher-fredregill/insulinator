@@ -1,0 +1,19 @@
+<h1><%= "#{@meal.name} - #{@meal.eaten_at}" %></h1>
+<h3><%= @meal.description %></h3>
+<h4>Ingredients used:</h4>
+<ul>
+<% @meal.ingredients.each do |ingredient| %>
+	<li><%= link_to ingredient.name, ingredient_url(id: ingredient.id) %></li>
+<% end %>
+</ul>
+<h4>Insulins taken:</h4>
+<ul>
+<% @meal.insulins.each do |insulin| %>
+	<p>
+		<li><%= link_to insulin.name, insulin_url(id: insulin.id) %></li>
+		<p><%= "Amount taken: #{insulin.amount}" %></p>
+		<p><%= "Description: #{insulin.description}" %></p>
+		<p><%= "Injected at: #{insulin.injected_at}" %></p>
+	</p>
+<% end %>
+</ul>
