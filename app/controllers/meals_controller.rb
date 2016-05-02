@@ -1,17 +1,16 @@
 class MealsController < ApplicationController
 
-	attr_accessor :name, :description, :eaten_at
-
   def index
   	@meals = Meal.all
 	end
 
 	def show
 		@meal = Meal.find(params[:id])
+		@new_ingredient = @meal.ingredients.build
 	end
 
-  def new
-  	@meal = Meal.new
+	def new
+		@meal = Meal.new
 	end
 
 	def create
@@ -25,6 +24,6 @@ class MealsController < ApplicationController
 	private
 
 	def meal_params
-		params.require(:meal).permit(:name, :description, :eaten_at)
+		params.require(:meal).permit(:eaten_at)
 	end
 end

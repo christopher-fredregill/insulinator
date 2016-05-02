@@ -3,7 +3,8 @@
 <h4>Ingredients used:</h4>
 <ul>
 <% @meal.ingredients.each do |ingredient| %>
-	<li><%= link_to ingredient.name, ingredient_url(id: ingredient.id) %></li>
+	<!--li--><!--%= link_to ingredient.name, meal_ingredient_path(@meal, ingredient) %--><!--/li-->
+	<li><%= ingredient.name %></li>
 <% end %>
 </ul>
 <h4>Insulins taken:</h4>
@@ -17,4 +18,9 @@
 	</p>
 <% end %>
 </ul>
+<%= form_for ([@meal, @new_ingredient]) do |f| %>
+	<%= f.text_field :name %>
+	<%= f.number_field :amount, step: 'any' %>
+	<%= f.submit 'Add Ingredient' %>
+<% end %>
 <%= link_to "Meals index", meals_path %>
