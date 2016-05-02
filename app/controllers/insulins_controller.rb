@@ -1,4 +1,4 @@
-class InsulinController < ApplicationController
+class InsulinsController < ApplicationController
   def index
   	@insulins = Insulin.all
 	end

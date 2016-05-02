@@ -1,4 +1,4 @@
-class IngredientController < ApplicationController
+class IngredientsController < ApplicationController
   def index
 		@ingredients = Ingredient.all
   end
