@@ -3,7 +3,7 @@ require_relative '../test_helper'
 class MealsIndexTest < ActionDispatch::IntegrationTest
   setup { host! 'api.example.com' }
 
-  test 'returns Meals without filters' do
+  test 'Meals index without filters' do
     breakfast = Meal.create!(name: 'breakfast', description: 'test breakfast')
     lunch = Meal.create!(name: 'lunch', description: 'test lunch')
 
