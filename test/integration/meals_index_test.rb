@@ -9,6 +9,7 @@ class MealsIndexTest < ActionDispatch::IntegrationTest
 
     get '/meals'
     assert_equal 200, response.status
+
     meal_names = json(response.body).collect { |m| m[:name] }
     assert_includes meal_names, breakfast.name
     assert_includes meal_names, lunch.name
