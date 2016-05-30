@@ -5,5 +5,6 @@ Rails.application.routes.draw do
       resources :ingredients
     end
     resources :blood_sugars # Don't scope to a meal; association is done using Timestamps
+    resources :insulins # Insulins can be taken independently of a meal
   end  
 end

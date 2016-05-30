@@ -19,6 +19,6 @@ class MealInsulinsIndexTest < ActionDispatch::IntegrationTest
     injection_times = json(response.body).collect { |i|  i[:injected_at] }
     assert_includes insulin_names, 'Humalog'
     assert_includes insulin_names, 'Humulin R'
-    refute_includes injection_times, lunch_injected_at
+    refute_includes injection_times, lunch_injected_at # Make sure this isn't just because of a Time formatting issue
   end
 end
