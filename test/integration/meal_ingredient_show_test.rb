@@ -9,6 +9,7 @@ class MealIngredientShowTest < ActionDispatch::IntegrationTest
 
     get "/meals/#{breakfast.id}/ingredients/#{breakfast_eggs.id}"
     assert_equal 200, response.status
+
     ingredient = json(response.body)
     assert_equal ingredient[:name], 'egg'
     assert_equal ingredient[:amount], '2.0'
