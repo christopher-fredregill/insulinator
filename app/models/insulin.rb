@@ -1,3 +1,3 @@
 class Insulin < ActiveRecord::Base
-	belongs_to :meal
+  belongs_to :meal
 end
