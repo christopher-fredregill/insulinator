@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424185957) do
+ActiveRecord::Schema.define(version: 20160530235237) do
+
+  create_table "blood_sugars", force: :cascade do |t|
+    t.decimal  "reading"
+    t.string   "units"
+    t.datetime "measured_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
